@@ -11,10 +11,14 @@
     scrollbar-width: none;      /* Firefox */
     -ms-overflow-style: none;   /* Internet Explorer 10+ */
 
+
+    --banner-load-duration: 500ms;
+    --banner-delay: 1ms;
+
     --food-load-duration: 400ms;
     --time-delta-value: 100ms;
 
-    --zerost-delay: 10ms;
+    --zerost-delay: calc( var(--banner-delay) + var(--banner-load-duration) + var(--time-delta-value));
     --first-delay: calc( var(--zerost-delay) + var(--food-load-duration) - var(--time-delta-value));
     --second-delay: calc( var(--first-delay) + var(--food-load-duration) - var(--time-delta-value));
     --third-delay: calc( var(--second-delay) + var(--food-load-duration) - var(--time-delta-value));
@@ -43,6 +47,13 @@
     text-align: center;
     font-family: "Alex Brush";
     color: #fff;
+
+    animation-name: banner-load; /* Animation is defined in the keyframes at the end of this doc */
+    animation-duration: var(--banner-load-duration);
+    animation-delay: var(--banner-delay);
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    /*opacity: 0;*/
 
     
 }
@@ -89,6 +100,8 @@
     margin: auto;
     text-align: center;
     padding-top: 50px;
+
+    
 
 }
 .food h2{
@@ -153,13 +166,26 @@
     font-size: clamp(10px, 4vw, 30px);
 }
 
-/* Animate the opacity */
+/* Animate the food title and discription */
 @keyframes foodtitle-load {
     0% {
         opacity: 0;
+        transform: translateY(-2px) scale(0.9);
     }
 
     100% {
         opacity: 100%;
+        transform: translateY(0px) scale();
+    }
+}
+
+/* Animate the banner */
+@keyframes banner-load {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(0);
     }
 }
