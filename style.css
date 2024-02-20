@@ -149,7 +149,8 @@
 }
 .thanks p{
     font-family: "Alex Brush";
-    color: #888
+    color: #888;
+    font-size: clamp(10px, 4vw, 30px);
 }
 
 /* Animate the opacity */
