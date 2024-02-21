@@ -12,7 +12,7 @@
     -ms-overflow-style: none;   /* Internet Explorer 10+ */
 
 
-    --banner-load-duration: 500ms;
+    --banner-load-duration: 600ms;
     --banner-delay: 1ms;
 
     --food-load-duration: 400ms;
