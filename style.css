@@ -18,7 +18,7 @@
     --food-load-duration: 400ms;
     --time-delta-value: 100ms;
 
-    --zerost-delay: calc( var(--banner-delay) + var(--banner-load-duration) + var(--time-delta-value));
+    --zerost-delay: calc( var(--banner-delay) + var(--banner-load-duration) - var(--time-delta-value));
     --first-delay: calc( var(--zerost-delay) + var(--food-load-duration) - var(--time-delta-value));
     --second-delay: calc( var(--first-delay) + var(--food-load-duration) - var(--time-delta-value));
     --third-delay: calc( var(--second-delay) + var(--food-load-duration) - var(--time-delta-value));
