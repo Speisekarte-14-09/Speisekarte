@@ -53,6 +53,7 @@
     animation-delay: var(--banner-delay);
     animation-timing-function: ease-in-out;
     animation-fill-mode: forwards;
+    transform: translateY(-100%);
     /*opacity: 0;*/
 
     
